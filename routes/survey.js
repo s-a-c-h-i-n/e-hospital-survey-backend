@@ -5,14 +5,10 @@ const Survey = require('../models/Survey');
 // Route to save survey responses
 router.post('/submit', async (req, res) => {
   try {
-    const { name, email, rating, feedback, multipleChoiceAnswers } = req.body;
+    const { multipleChoiceAnswers } = req.body;
 
     // Create a new survey response
     const newSurvey = new Survey({
-      name,
-      email,
-      rating,
-      feedback,
       multipleChoiceAnswers,
     });
 
